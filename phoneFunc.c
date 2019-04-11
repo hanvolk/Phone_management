@@ -21,12 +21,21 @@ void addData(void)
 {
     puts("연락처 추가를 시작합니다.");
     person* buf;
-    int ret;
+    int ret=0, idx=0;
     buf=(person*)malloc(sizeof(person));
 
     printf("이    름 : ");gets(buf->name);
     printf("전화번호 : ");gets(buf->pNum);
     printf("메    모 : ");gets(buf->memo);
+
+    for(idx=0;idx<perNum;idx++)
+    {
+        if(!strcmp(buf->name,plist[idx]->name) && !strcmp(buf->pNum,plist[idx]->pNum))
+        {
+            printf("연락처가 이미 존재합니다.");getchar();
+            return;
+         }
+    }
 
     printf("연락처를 추가 합니다. (1. 확인, 0.취소) : ");
     scanf("%d",&ret);
@@ -59,15 +68,29 @@ void searchData(void)
 
 void delData(void)
 {
-    int idx;
+    int idx=0, i=0;
+    int idxMatch[50]={0,};
     char sName[NAME_LEN];
     printf("삭제 할 이름 : ");gets(sName);
 
     for(idx=0;idx<perNum;idx++)
     {
         if(!strcmp(sName,plist[idx]->name))
-                    DelPersonData(idx);
+        {
+            idxMatch[i]=idx;
+            i++;
+        }
     }
+
+     for(idx=0;idx<i;idx++)
+    {
+        printf("No. %d \n",idx+1);
+        ShowPersonData(plist[idxMatch[idx]]);
+    }
+
+    printf("선택 : ");scanf("%d",&idx);clearbuf();
+    DelPersonData(idxMatch[idx-1]);
+
     clearbuf();
 }
 
@@ -112,7 +135,6 @@ void LoadData(void)
 
 void DelPersonData(int idx)
 {
-    int i;
     free(plist[idx]);
 
     while(idx<perNum)
