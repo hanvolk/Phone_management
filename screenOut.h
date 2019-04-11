@@ -12,6 +12,7 @@
 
 #include "phoneData.h"
 int ShowMenu(void);
-void ShowAllData(void);
+void ShowPersonData(const person* ref);
+
 
 #endif // __SCREENOUT_H__

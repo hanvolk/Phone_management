@@ -24,8 +24,11 @@ int ShowMenu(void)
 
 }
 
-void ShowAllData(void)
+void ShowPersonData(const person* ref)
 {
-    puts("전체 연락처를 출력 합니다.");
-    clearbuf();
+    printf("┌──────────────────────────────\n");
+    printf("│ ▶ 이    름 : %s \n",ref->name);
+    printf("│ ▶ 전화번호 : %s \n",ref->pNum);
+    printf("│ ▶ 메    모 : %s \n",ref->memo);
+    printf("└─────────────────────────────\n");
 }
