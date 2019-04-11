@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1554947746 source:c:\users\hanvo\documents\google_driver\교안작성\programming\c\c프로그래밍 파워 업그레이드_1st\phone_management\main.c
+1554961640 source:c:\users\hanvo\documents\google_driver\교안작성\programming\c\c프로그래밍 파워 업그레이드_1st\phone_management\main.c
 	"common.h"
 	"screenOut.h"
 	"phoneFunc.h"
 
-1554958231 source:c:\users\hanvo\documents\google_driver\교안작성\programming\c\c프로그래밍 파워 업그레이드_1st\phone_management\phonefunc.c
+1554961407 source:c:\users\hanvo\documents\google_driver\교안작성\programming\c\c프로그래밍 파워 업그레이드_1st\phone_management\phonefunc.c
 	"common.h"
 	"phoneData.h"
 	"screenOut.h"
@@ -14,10 +14,10 @@
 	<stdio.h>
 	<stdlib.h>
 
-1554952830 c:\users\hanvo\documents\google_driver\교안작성\programming\c\c프로그래밍 파워 업그레이드_1st\phone_management\phonefunc.h
+1554961407 c:\users\hanvo\documents\google_driver\교안작성\programming\c\c프로그래밍 파워 업그레이드_1st\phone_management\phonefunc.h
 	"phoneData.h"
 
-1554946563 source:c:\users\hanvo\documents\google_driver\교안작성\programming\c\c프로그래밍 파워 업그레이드_1st\phone_management\screenout.c
+1554961469 source:c:\users\hanvo\documents\google_driver\교안작성\programming\c\c프로그래밍 파워 업그레이드_1st\phone_management\screenout.c
 	"common.h"
 	"screenOut.h"
 

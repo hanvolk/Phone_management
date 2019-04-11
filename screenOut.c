@@ -17,6 +17,8 @@ int ShowMenu(void)
     puts("2. 검          색 ");
     puts("3. 삭          제 ");
     puts("4. 전  체   목 록  ");
+    puts("5. 수          정");
+    puts("0. 프 로 그 램 종 료");
     puts("-------------------------");
     printf("선택 : ");scanf("%d",&n);
     clearbuf();

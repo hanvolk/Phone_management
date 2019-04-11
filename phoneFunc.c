@@ -104,6 +104,66 @@ void ShowAllData(void)
     clearbuf();
 }
 
+void ChangeData(void)
+{
+    int idx=0,i=0;
+    int idxMatch[50]={0,};
+    char sName[NAME_LEN];
+    printf("수정 할 이름 : ");gets(sName);
+
+    for(idx=0;idx<perNum;idx++)
+    {
+        if(!strcmp(sName,plist[idx]->name))
+        {
+            idxMatch[i]=idx;
+            i++;
+        }
+    }
+
+    for(idx=0;idx<i;idx++)
+    {
+        printf("No. %d \n",idx+1);
+        ShowPersonData(plist[idxMatch[idx]]);
+    }
+
+
+    printf("선택 : ");scanf("%d",&idx);clearbuf();
+    changePersonData(idxMatch[idx-1]);
+}
+
+void changePersonData(int idx)
+{
+
+    person* buf;
+    int ret=0, i=0;
+    buf=(person*)malloc(sizeof(person));
+
+    printf("이    름 : ");gets(buf->name);
+    printf("전화번호 : ");gets(buf->pNum);
+    printf("메    모 : ");gets(buf->memo);
+
+    for(i=0;i<perNum;i++)
+    {
+        if(!strcmp(buf->name,plist[i]->name) && !strcmp(buf->pNum,plist[i]->pNum))
+        {
+            printf("연락처가 이미 존재합니다.");getchar();
+            return;
+         }
+    }
+    printf("연락처를 변경 합니다. (1. 확인, 0.취소) : ");
+    scanf("%d",&ret);
+
+    if(ret==1)
+    {
+        free(plist[idx]);
+        plist[idx]=buf;
+        SaveData();
+    }
+
+    clearbuf();
+}
+
+
 void SaveData(void)
 {
     int idx;
@@ -146,4 +206,14 @@ void DelPersonData(int idx)
     perNum--;
     SaveData();
     puts("삭제가 완료 되었습니다.");
+}
+
+void ExitProgram(void)
+{
+    int idx=0;
+    printf("프로그램을 종료 합니다.\n");
+    for(idx=0;idx<perNum;idx++)
+    {
+        free(plist[idx]);
+    }
 }

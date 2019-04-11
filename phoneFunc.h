@@ -14,11 +14,15 @@ void addData(void);
 void searchData(void);
 void delData(void);
 void ShowAllData(void);
+void ChangeData(void);
 
 void SaveData(void);
 void LoadData(void);
 
 void DelPersonData(int idx);
+void changePersonData(int idx);
+
+void ExitProgram(void);
 
 void clearbuf(void);
 

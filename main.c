@@ -2,8 +2,7 @@
 #include "screenOut.h"
 #include "phoneFunc.h"
 
-enum {ADD=1, SEARCH=2, DEL=3, SHOWALL=4, END=0};
-
+enum {ADD=1, SEARCH=2, DEL=3, SHOWALL=4, CHANGE=5, END=0};
 
 int main()
 {
@@ -11,7 +10,7 @@ int main()
     LoadData();
 
     sw=ShowMenu();
-    while(sw!=END)
+    while(1)
     {
         switch(sw)
         {
@@ -23,8 +22,14 @@ int main()
              delData(); break;
         case SHOWALL:
             ShowAllData(); break;
+        case CHANGE:
+            ChangeData();break;
+        case END:
+            ExitProgram();goto loopOut;
         }
         sw=ShowMenu();
     }
+    loopOut:
+
     return 0;
 }
