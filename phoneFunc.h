@@ -18,6 +18,8 @@ void ShowAllData(void);
 void SaveData(void);
 void LoadData(void);
 
+void DelPersonData(int idx);
+
 void clearbuf(void);
 
 

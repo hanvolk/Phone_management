@@ -44,13 +44,30 @@ void addData(void)
 
 void searchData(void)
 {
-    puts("연락처 검색을 시작합니다.");
+    int idx;
+    char sName[NAME_LEN];
+    printf("찾는 이름 : ");gets(sName);
+
+    for(idx=0;idx<perNum;idx++)
+    {
+        if(!strcmp(sName,plist[idx]->name))
+                    ShowPersonData(plist[idx]);
+    }
+
     clearbuf();
 }
 
 void delData(void)
 {
-    puts("연락처를 삭제 합니다.");
+    int idx;
+    char sName[NAME_LEN];
+    printf("삭제 할 이름 : ");gets(sName);
+
+    for(idx=0;idx<perNum;idx++)
+    {
+        if(!strcmp(sName,plist[idx]->name))
+                    DelPersonData(idx);
+    }
     clearbuf();
 }
 
@@ -91,4 +108,20 @@ void LoadData(void)
     }
     fclose(fpr);
 
+}
+
+void DelPersonData(int idx)
+{
+    int i;
+    free(plist[idx]);
+
+    while(idx<perNum)
+    {
+        plist[idx]=plist[idx+1];
+        idx++;
+    }
+
+    perNum--;
+    SaveData();
+    puts("삭제가 완료 되었습니다.");
 }
