@@ -15,7 +15,10 @@ void searchData(void);
 void delData(void);
 void ShowAllData(void);
 
-void clearbuf(void)
-{ while(getchar()!='\n');}
+void SaveData(void);
+void LoadData(void);
+
+void clearbuf(void);
+
 
 #endif // __PHONEFUNC_H__

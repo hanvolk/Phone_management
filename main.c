@@ -8,6 +8,8 @@ enum {ADD=1, SEARCH=2, DEL=3, SHOWALL=4, END=0};
 int main()
 {
     int sw;
+    LoadData();
+
     sw=ShowMenu();
     while(sw!=END)
     {
